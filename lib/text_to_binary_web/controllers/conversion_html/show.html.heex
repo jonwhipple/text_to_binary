@@ -1,0 +1,17 @@
+<.header>
+  Conversion <%= @conversion.id %>
+  <:subtitle>This is a conversion record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/conversions/#{@conversion}/edit"}>
+      <.button>Edit conversion</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Input text"><%= @conversion.input_text %></:item>
+  <:item title="Output binary"><%= @conversion.output_binary %></:item>
+  <:item title="Markdown"><%= @conversion.markdown %></:item>
+</.list>
+
+<.back navigate={~p"/conversions"}>Back to conversions</.back>

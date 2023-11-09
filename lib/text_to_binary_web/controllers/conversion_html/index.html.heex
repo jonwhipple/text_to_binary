@@ -1,0 +1,25 @@
+<.header>
+  Listing Conversions
+  <:actions>
+    <.link href={~p"/conversions/new"}>
+      <.button>New Conversion</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="conversions" rows={@conversions} row_click={&JS.navigate(~p"/conversions/#{&1}")}>
+  <:col :let={conversion} label="Input text"><%= conversion.input_text %></:col>
+  <:col :let={conversion} label="Output binary"><%= conversion.output_binary %></:col>
+  <:col :let={conversion} label="Markdown"><%= conversion.markdown %></:col>
+  <:action :let={conversion}>
+    <div class="sr-only">
+      <.link navigate={~p"/conversions/#{conversion}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/conversions/#{conversion}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={conversion}>
+    <.link href={~p"/conversions/#{conversion}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

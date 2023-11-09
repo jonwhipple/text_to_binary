@@ -1,0 +1,15 @@
+<.header>
+  New Conversion
+  <:subtitle>Use this form to manage conversion records in your database.</:subtitle>
+</.header>
+
+<.conversion_form changeset={@changeset} action={~p"/conversions"} />
+
+<!-- Add a section to display the conversion result -->
+<div>
+  <%= if @conversion do %>
+    <code><%= @conversion.output_binary %></code>
+  <% end %>
+</div>
+
+<.back navigate={~p"/conversions"}>Back to conversions</.back>

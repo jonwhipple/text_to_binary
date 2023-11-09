@@ -1,0 +1,8 @@
+<.header>
+  Edit Conversion <%= @conversion.id %>
+  <:subtitle>Use this form to manage conversion records in your database.</:subtitle>
+</.header>
+
+<.conversion_form changeset={@changeset} action={~p"/conversions/#{@conversion}"} />
+
+<.back navigate={~p"/conversions"}>Back to conversions</.back>

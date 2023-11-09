@@ -1,0 +1,12 @@
+<.simple_form :let={f} for={@changeset} action={@action}>
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+  <.input field={f[:input_text]} type="textarea" label="Input text" />
+  <%!-- <label for="input_text">Input text</label>
+  <textarea id="input_text" name="conversion[input_text]"><%= @changeset.data.input_text %></textarea>   --%>
+  <:actions>
+    <.button>Save Conversion</.button>
+  </:actions>
+  <%!-- <.input field={f[:output_binary]} type="text" label="Output binary" /> --%>
+</.simple_form>
